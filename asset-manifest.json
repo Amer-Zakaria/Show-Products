@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Show-Products/static/css/main.4400c17a.chunk.css",
+    "main.js": "/Show-Products/static/js/main.4464bf7a.chunk.js",
+    "main.js.map": "/Show-Products/static/js/main.4464bf7a.chunk.js.map",
+    "runtime-main.js": "/Show-Products/static/js/runtime-main.a6e13bc9.js",
+    "runtime-main.js.map": "/Show-Products/static/js/runtime-main.a6e13bc9.js.map",
+    "static/css/2.058794ce.chunk.css": "/Show-Products/static/css/2.058794ce.chunk.css",
+    "static/js/2.1ab7c8b5.chunk.js": "/Show-Products/static/js/2.1ab7c8b5.chunk.js",
+    "static/js/2.1ab7c8b5.chunk.js.map": "/Show-Products/static/js/2.1ab7c8b5.chunk.js.map",
+    "index.html": "/Show-Products/index.html",
+    "static/css/2.058794ce.chunk.css.map": "/Show-Products/static/css/2.058794ce.chunk.css.map",
+    "static/css/main.4400c17a.chunk.css.map": "/Show-Products/static/css/main.4400c17a.chunk.css.map",
+    "static/js/2.1ab7c8b5.chunk.js.LICENSE.txt": "/Show-Products/static/js/2.1ab7c8b5.chunk.js.LICENSE.txt",
+    "static/media/sprite.0ad79041.svg": "/Show-Products/static/media/sprite.0ad79041.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6e13bc9.js",
+    "static/css/2.058794ce.chunk.css",
+    "static/js/2.1ab7c8b5.chunk.js",
+    "static/css/main.4400c17a.chunk.css",
+    "static/js/main.4464bf7a.chunk.js"
+  ]
+}
