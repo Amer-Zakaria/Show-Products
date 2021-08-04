@@ -9,8 +9,16 @@ const Product = ({
     quantity_sold,
     product_quantity,
     soldStrength,
-    product_id: { name: productName, description: productDescription },
-    prize_id: { name: prizeName, description: prizeDescription },
+    product_id: {
+      name: productName,
+      description: productDescription,
+      image: productImage,
+    },
+    prize_id: {
+      name: prizeName,
+      description: prizeDescription,
+      image: prizeImage,
+    },
   },
   onIncrease,
   onDecrease,
@@ -31,7 +39,7 @@ const Product = ({
       <div className="product__left">
         <img
           className="product__image media__image"
-          src={`https://picsum.photos/700/400.webp?random=${id}`}
+          src={productImage}
           alt="Product Image"
         />
         <div>
@@ -90,7 +98,7 @@ const Product = ({
         <footer className="prize__footer grid grid--col-2">
           <img
             className="prize__image media__image"
-            src={`https://picsum.photos/700/400.webp?random=${id + 10}`}
+            src={prizeImage}
             alt="Prize Image"
           />
           <div>
