@@ -32,6 +32,13 @@ h1 {
   .grid--col-2 {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 4rem;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .grid--col-2 .product__left {
+    grid-column: 2;
+    grid-row: 1;
   }
 }
 
@@ -42,8 +49,9 @@ h1 {
   margin: 0 auto;
   height: 250px;
   width: 100%;
-  max-width: 700px;
+  max-width: 250px;
   border-radius: 10px;
+  user-select: none;
 }
 
 .media__title {
@@ -53,13 +61,13 @@ h1 {
 }
 
 .media__content {
-  text-align: center;
+  text-align: start;
   margin: 1rem 0 3rem;
 }
 
 @media screen and (min-width: 650px) {
   .media__image {
-    max-width: 768px;
+    max-width: 250px;
   }
 
   .media__title {
@@ -67,7 +75,7 @@ h1 {
   }
 
   .media__content {
-    text-align: end;
+    text-align: start;
     font-size: 1.8rem;
     margin-bottom: 0;
   }
@@ -78,26 +86,25 @@ h1 {
   background-color: white;
   width: 90%;
   margin: 0 auto 4rem;
-  padding: 2rem;
-  padding-bottom: 6rem;
+  padding: 3rem 4rem;
   border: 1px solid rgba(0, 0, 0, 0.295);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+  max-width: 400px;
 }
 
 .product__left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin-bottom: 3rem;
 }
 
 .product__sold-bar-container {
-  height: 1.5rem;
-  width: 70%;
+  height: 1rem;
+  width: 100%;
   background-color: rgba(153, 145, 145, 0.178);
-  margin: 2.5rem 0 0.5rem;
+  margin: 4rem 0 0;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -122,6 +129,11 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.product__content-more {
+  color: var(--color-blue);
+  cursor: pointer;
+}
+
 .product__pricing {
   display: flex;
   justify-content: space-around;
@@ -131,6 +143,7 @@ h1 {
 .product__price {
   color: var(--color-blue);
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .product__count {
@@ -212,8 +225,8 @@ input[type="number"] {
 @media screen and (min-width: 650px) {
   .product {
     padding: 4rem;
-    padding-bottom: 6rem;
     margin-bottom: 6rem;
+    max-width: unset;
   }
 
   .product__left {
@@ -234,8 +247,7 @@ input[type="number"] {
 }
 
 /* prize */
-
-.prize {
+/* .prize {
   height: fit-content;
   position: absolute;
   bottom: 0;
@@ -311,7 +323,7 @@ input[type="number"] {
   .prize__title {
     margin-top: 0;
   }
-}
+} */
 
 /* products */
 .products {

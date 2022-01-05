@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Product from "./components/product";
-import "./CSS/App.css";
+import textCutter from "./utils/textCutter";
 
 function App() {
   const [products, setProducts] = useState([]);
 
   async function getProducts() {
-    const result = await axios(
-      "https://wawinner.its.ae/dev/public/api/v1/front-end/campaign"
-    ).catch((err) => {
-      alert(err);
-    });
-
-    if (result.data.status >= 400) {
+    const result = await axios("https://fakestoreapi.com/products").catch(
+      (err) => {
+        alert(err);
+      }
+    );
+    FIXME: if (result?.data.status >= 400) {
       alert(result.data.message);
+    } else {
+      for (const product of result.data) {
+        product.quantitySold = Math.floor(Math.random() * product.rating.count);
+        const strength = (product.quantitySold * 100) / product.rating.count;
+        product.soldStrength = strength;
+        product.number = 1;
+        product.cutProductDescription = textCutter(product.description, 150);
+        product.expand = false;
+      }
+      setProducts(result.data.slice(0, result.data.length - 1));
     }
-
-    for (const product of result.data.data) {
-      const strength = (product.quantity_sold * 100) / product.product_quantity;
-      product.soldStrength = strength;
-      product.number = 1;
-    }
-
-    setProducts(result.data.data);
   }
 
   useEffect(() => {
@@ -72,6 +73,14 @@ function App() {
     setProducts(newProducts);
   };
 
+  const handleExpand = (productId) => {
+    let newProducts = products.map((product) => {
+      if (product.id === productId) product.expand = !product.expand;
+      return product;
+    });
+    setProducts(newProducts);
+  };
+
   return (
     <div className="App">
       <h1>Products</h1>
@@ -84,6 +93,7 @@ function App() {
             onDecrease={handleDecrease}
             onNumberChange={handleNumberChange}
             onNumberFocusout={handleNumberFocusout}
+            onExpand={handleExpand}
           />
         ))}
       </div>
